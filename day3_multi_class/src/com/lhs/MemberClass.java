@@ -10,8 +10,8 @@ public class MemberClass {
 	
 	// 클래스 변수는 자동초기화 되긴 하지만, 위험할 수 있기 때문에 직접 초기화해주는게 좋다.
 	String pno = null; 		// 교수 사번  
-	String firstNo = null; 	// 주민등록 앞자리
-	String lastNo = null; 	// 주민등록 뒷자리 
+	private String firstNo = null; 	// 주민등록 앞자리
+	private String lastNo = null; 	// 주민등록 뒷자리 
 	String pname = null; 	// 교수 이름         	 
 	int cCode = 0; 			// 클래스(반) 코드      
 	String pJob = null; 	// 교수직책           
@@ -26,11 +26,27 @@ public class MemberClass {
 	public MemberClass(String pno, String jumin, String pname, int cCode, String pjob, String hireDate) {
 		this.pno = pno;
 		String[] tmp = jumin.split("-");
-		this.firstNo = tmp[0];
-		this.lastNo = tmp[1];
+		this.setFirstNo(tmp[0]);
+		this.setLastNo(tmp[1]);
 		this.pname = pname;
 		this.cCode = cCode;
 		this.pJob = pjob;
 		this.hireDate = Integer.parseInt(hireDate);
+	}
+
+	public String getFirstNo() {
+		return firstNo;
+	}
+
+	public void setFirstNo(String firstNo) {
+		this.firstNo = firstNo;
+	}
+
+	public String getLastNo() {
+		return lastNo;
+	}
+
+	public void setLastNo(String lastNo) {
+		this.lastNo = lastNo;
 	}
 }
