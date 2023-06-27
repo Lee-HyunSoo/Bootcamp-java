@@ -13,7 +13,10 @@ public class PrintClass {
 	}
 	
 	public static void prn(String author, ArrayList<String> titles) {
-		for(String title : titles)
-			System.out.println(title);
+		if (titles.isEmpty())
+			System.out.println("해당 저자의 도서를 검색할 수 없습니다.");
+		else
+			for(String title : titles)
+				System.out.println(title);
 	}
 }
