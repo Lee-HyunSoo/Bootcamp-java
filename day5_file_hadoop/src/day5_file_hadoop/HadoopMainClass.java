@@ -8,6 +8,7 @@ public class HadoopMainClass {
 		String uri3 = "C:\\filetest\\hadoops.html";
 		
 		HadoopDataClass hadoopDataClass = new HadoopDataClass();
+		hadoopDataClass.readDataName(uri1);
 		hadoopDataClass.setData(uri1, uri2);
 		HadoopPrintClass.saveHtml(uri3, HadoopMethodClass.createHtml(hadoopDataClass.hadoops));
 	}

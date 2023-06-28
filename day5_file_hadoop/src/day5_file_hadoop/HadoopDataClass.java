@@ -10,14 +10,14 @@ import java.util.Map;
 
 public class HadoopDataClass {
 
+	ArrayList<String> datanames = new ArrayList<String>();
 	Map<String, Integer> hadoops = new HashMap<String, Integer>();
 	
 	public HadoopDataClass() {
 	
 	}
 	
-	public static ArrayList<String> readDataName(String uri) {
-		ArrayList<String> datanames = new ArrayList<String>();
+	public void readDataName(String uri) {
 		FileReader fr = null;
 		BufferedReader br = null;
 	
@@ -36,11 +36,9 @@ public class HadoopDataClass {
 		} catch (IOException e) {
 			System.out.println("IOException: " + e.getMessage());
 		}
-		return datanames;
 	}
 	
 	public void setData(String uri1, String uri2) {
-		ArrayList<String> datanames = readDataName(uri1);
 		for (String s : datanames)
 			hadoops.putIfAbsent(s, 0);
 		
@@ -55,8 +53,12 @@ public class HadoopDataClass {
 			String[] splits = null;
 			while((tmp = br.readLine()) != null) {
 				splits = tmp.split(" ");
-				for (String s : splits)
-					hadoops.computeIfPresent(s, (k, v) -> v + 1);
+				for (String s : splits) {
+					for (String h : hadoops.keySet()) {
+						if (s.contains(h))
+							hadoops.computeIfPresent(h, (k, v) -> v + 1);
+					}	
+				}
 			}
 			
 			br.close();
