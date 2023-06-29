@@ -1,4 +1,4 @@
-package day5_file_hadoop;
+package com.lhs;
 
 public class HadoopClass {
 	

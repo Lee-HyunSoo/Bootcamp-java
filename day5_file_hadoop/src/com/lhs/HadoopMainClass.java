@@ -1,10 +1,10 @@
-package day5_file_hadoop;
+package com.lhs;
 
 public class HadoopMainClass {
 
 	public static void main(String[] args) {
-		String uri1 = "C:\\filetest\\°Ë»ö´Ü¾î¸®½ºÆ®.txt";
-		String uri2 = "C:\\filetest\\ÇÏµÓ ºĞ»ê Ã³¸® ÆÄÀÏ ½Ã½ºÅÛ.txt";
+		String uri1 = "C:\\filetest\\ê²€ìƒ‰ë‹¨ì–´ë¦¬ìŠ¤íŠ¸.txt";
+		String uri2 = "C:\\filetest\\í•˜ë‘¡ ë¶„ì‚° ì²˜ë¦¬ íŒŒì¼ ì‹œìŠ¤í…œ.txt";
 		String uri3 = "C:\\filetest\\hadoops.html";
 		
 		HadoopDataClass hadoopDataClass = new HadoopDataClass();

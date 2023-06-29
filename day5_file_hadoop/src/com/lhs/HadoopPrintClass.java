@@ -1,4 +1,4 @@
-package day5_file_hadoop;
+package com.lhs;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -17,7 +17,7 @@ public class HadoopPrintClass {
 		} catch (IOException e) {
 			System.out.println("IOException: " + e.getMessage());
 		}
-		System.out.println("hadoops ÆÄÀÏ »ı¼º ¿Ï·á");
+		System.out.println("hadoops íŒŒì¼ ìƒì„± ì™„ë£Œ");
 	}
 
 }

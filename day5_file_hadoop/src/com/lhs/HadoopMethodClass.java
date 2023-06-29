@@ -1,4 +1,4 @@
-package day5_file_hadoop;
+package com.lhs;
 
 import java.util.Map;
 
@@ -11,11 +11,11 @@ public class HadoopMethodClass {
 		String tags = "";
 		
 		tags += "<html>";
-		tags += "<head><title>°¢ ´Ü¾îÀÇ °³¼ö È®ÀÎ</title></head>";
+		tags += "<head><title>ê° ë‹¨ì–´ì˜ ê°œìˆ˜ í™•ì¸</title></head>";
 		tags += "<body>";
 		
 		for (Map.Entry<String, Integer> entry : hadoops.entrySet())
-			tags += "<div>" + entry.getKey() + " : " + entry.getValue() + "È¸</div>";
+			tags += "<div>" + entry.getKey() + " : " + entry.getValue() + "íšŒ</div>";
 		
 		tags += "</body>";
 		tags += "</html>";
