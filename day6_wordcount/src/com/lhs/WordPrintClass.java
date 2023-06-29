@@ -1,15 +1,15 @@
-package day6_wordcount;
+package com.lhs;
 
 import java.io.FileWriter;
 import java.io.IOException;
 
 public class WordPrintClass {
 
-	// ±âº» »ı¼ºÀÚ¸¦ ¿ÜºÎ¿¡¼­ »ç¿ëÇÏÁö ¸øÇÏµµ·Ï private
+	// ê¸°ë³¸ ìƒì„±ìë¥¼ ì™¸ë¶€ì—ì„œ ì‚¬ìš©í•˜ì§€ ëª»í•˜ë„ë¡ private
 	private WordPrintClass() {
 	}
 	
-	// Àü´Ş µÈ ÆÄÀÏ °æ·Î¿Í ÅÂ±×µéÀ» ÀÌ¿ëÇÏ¿© html ÆÄÀÏ »ı¼º
+	// ì „ë‹¬ ëœ íŒŒì¼ ê²½ë¡œì™€ íƒœê·¸ë“¤ì„ ì´ìš©í•˜ì—¬ html íŒŒì¼ ìƒì„±
 	public static void saveHTML(String uri, String tags) {
 		FileWriter fw = null;
 		
@@ -17,7 +17,7 @@ public class WordPrintClass {
 			fw = new FileWriter(uri);
 			fw.write(tags);
 			fw.close();
-			System.out.println("HTML »ı¼º ¼º°ø");
+			System.out.println("HTML ìƒì„± ì„±ê³µ");
 		} catch (IOException e) {
 			System.out.println("IOException: " + e.getMessage());
 		}

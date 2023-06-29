@@ -1,4 +1,4 @@
-package day6_wordcount;
+package com.lhs;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -7,11 +7,11 @@ import java.io.IOException;
 
 public class WordMethodClass {
 
-	// ±âº» »ı¼ºÀÚ¸¦ ¿ÜºÎ¿¡¼­ »ç¿ëÇÏÁö ¸øÇÏµµ·Ï private
+	// ê¸°ë³¸ ìƒì„±ìë¥¼ ì™¸ë¶€ì—ì„œ ì‚¬ìš©í•˜ì§€ ëª»í•˜ë„ë¡ private
 	private WordMethodClass() {
 	}
 	
-	// °Ë»öÇÒ ´Ü¾îµéÀ» ÀúÀå
+	// ê²€ìƒ‰í•  ë‹¨ì–´ë“¤ì„ ì €ì¥
 	public static void readWord(String uri) {	
 		try {
 			FileReader fr = new FileReader(uri);
@@ -30,7 +30,7 @@ public class WordMethodClass {
 		}
 	}
 	
-	// ÀüÃ¼ ¹®¼­¸¦ ÁÙ´ÜÀ§·Î ÀúÀå
+	// ì „ì²´ ë¬¸ì„œë¥¼ ì¤„ë‹¨ìœ„ë¡œ ì €ì¥
 	public static void readSentence(String uri) {
 		FileReader fr;
 		BufferedReader br;
@@ -51,7 +51,7 @@ public class WordMethodClass {
 		}	
 	}
 	
-	// ÁÙ´ÜÀ§ ÀúÀå µÈ ¹®ÀåÀ» ºĞ¸®ÇÏ¿© ÀúÀå
+	// ì¤„ë‹¨ìœ„ ì €ì¥ ëœ ë¬¸ì¥ì„ ë¶„ë¦¬í•˜ì—¬ ì €ì¥
 	public static void splitSentence() {
 		String[] splits;
 		
@@ -61,13 +61,13 @@ public class WordMethodClass {
 		}	
 	}
 	
-	// ¹®Àåº°·Î ºĞ¸® µÈ ÀüÃ¼ µ¥ÀÌÅÍ¸¦ °Ë»ö
+	// ë¬¸ì¥ë³„ë¡œ ë¶„ë¦¬ ëœ ì „ì²´ ë°ì´í„°ë¥¼ ê²€ìƒ‰
 	public static void repeatWordCount() {
 		for (SentenceSplitClass s : WordDataClass.splitSentence)
 			searchWordCount(s.splitSentence);
 	}
 	
-	// repeatWordCount() ºÎÅÍ ºĞ¸® µÈ ÇÏ³ªÀÇ ¹®Àå¿¡ °¢ °Ë»ö´Ü¾î°¡ ÀÖ´ÂÁö È®ÀÎÇÏ¿© count
+	// repeatWordCount() ë¶€í„° ë¶„ë¦¬ ëœ í•˜ë‚˜ì˜ ë¬¸ì¥ì— ê° ê²€ìƒ‰ë‹¨ì–´ê°€ ìˆëŠ”ì§€ í™•ì¸í•˜ì—¬ count
 	public static void searchWordCount(String[] splitSentence) {
 		for (String s : splitSentence) {
 			for (WordCountClass w : WordDataClass.words) {
@@ -77,7 +77,7 @@ public class WordMethodClass {
 		}
 	}
 	
-	// °¢ ´Ü¾î count °ªÀ» ÀÌ¿ëÇÏ¿© tag »ı¼º
+	// ê° ë‹¨ì–´ count ê°’ì„ ì´ìš©í•˜ì—¬ tag ìƒì„±
 	public static String createHTML() {
 		String tags = "";
 
@@ -86,22 +86,22 @@ public class WordMethodClass {
 		tags = tags + "<body>";
 		tags = tags + "<table>";
 		
-		tags = tags + "<caption>°Ë»ö ´Ü¾îÀÇ ³ëÃâÈ½¼ö ½Ã°¢È­</caption>"; // <caption> : °¡¿îµ¥ Á¤·Ä
-		tags = tags + "<colgroup style='text-align:center;'>"; //<colgroup> : columnÀ» ±×·ìÈ­
-		tags = tags + "<col style='width: 10%;'>"; // 1¹øÂ° column :  ÃÑ columnÀÇ 10% »ç¿ë
-		tags = tags + "<col style='width: 10%;'>"; // 2¹øÂ° column : ÃÑ columnÀÇ 10% »ç¿ë
-		tags = tags + "<col style='width: 80%;'>"; // 3¹øÂ° column : ÃÑ columnÀÇ 80% »ç¿ë
+		tags = tags + "<caption>ê²€ìƒ‰ ë‹¨ì–´ì˜ ë…¸ì¶œíšŸìˆ˜ ì‹œê°í™”</caption>"; // <caption> : ê°€ìš´ë° ì •ë ¬
+		tags = tags + "<colgroup style='text-align:center;'>"; //<colgroup> : columnì„ ê·¸ë£¹í™”
+		tags = tags + "<col style='width: 10%;'>"; // 1ë²ˆì§¸ column :  ì´ columnì˜ 10% ì‚¬ìš©
+		tags = tags + "<col style='width: 10%;'>"; // 2ë²ˆì§¸ column : ì´ columnì˜ 10% ì‚¬ìš©
+		tags = tags + "<col style='width: 80%;'>"; // 3ë²ˆì§¸ column : ì´ columnì˜ 80% ì‚¬ìš©
 		tags = tags + "</colgroup>";
 		
-		tags = tags + "<thead>"; // <thead> : Á¦¸ñÀ¸·Î Ä­À» ¸¸µé ¶§ »ç¿ë 
+		tags = tags + "<thead>"; // <thead> : ì œëª©ìœ¼ë¡œ ì¹¸ì„ ë§Œë“¤ ë•Œ ì‚¬ìš© 
 		tags = tags + "<tr>";
-		tags = tags + "<th>°Ë»ö ´Ü¾î</th>";
-		tags = tags + "<th>³ëÃâ È½¼ö</th>";
-		tags = tags + "<th>½Ã°¢È­</th>";
+		tags = tags + "<th>ê²€ìƒ‰ ë‹¨ì–´</th>";
+		tags = tags + "<th>ë…¸ì¶œ íšŸìˆ˜</th>";
+		tags = tags + "<th>ì‹œê°í™”</th>";
 		tags = tags + "</tr>";
 		tags = tags + "</thead>";
 		
-		tags = tags + "<tbody>"; // <tbody> : Å×ÀÌºíÀÇ µ¥ÀÌÅÍ ¿µ¿ª ½ÃÀÛ
+		tags = tags + "<tbody>"; // <tbody> : í…Œì´ë¸”ì˜ ë°ì´í„° ì˜ì—­ ì‹œì‘
 		
 		String hashTag = ".";
 		for(WordCountClass w : WordDataClass.words) {

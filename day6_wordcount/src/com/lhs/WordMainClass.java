@@ -1,10 +1,10 @@
-package day6_wordcount;
+package com.lhs;
 
 public class WordMainClass {
 
 	public static void main(String[] args) {
-		String uri_word = "C:\\filetest\\°Ë»ö´Ü¾î¸®½ºÆ®.txt";
-		String uri_doc = "C:\\filetest\\ÇÏµÓ ºĞ»ê Ã³¸® ÆÄÀÏ ½Ã½ºÅÛ.txt";
+		String uri_word = "C:\\filetest\\ê²€ìƒ‰ë‹¨ì–´ë¦¬ìŠ¤íŠ¸.txt";
+		String uri_doc = "C:\\filetest\\í•˜ë‘¡ ë¶„ì‚° ì²˜ë¦¬ íŒŒì¼ ì‹œìŠ¤í…œ.txt";
 		String uri_save = "C:\\filetest\\wordcount.html";
 		
 		WordMethodClass.readWord(uri_word);		

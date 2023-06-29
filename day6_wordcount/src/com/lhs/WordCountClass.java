@@ -1,9 +1,9 @@
-package day6_wordcount;
+package com.lhs;
 
 public class WordCountClass {
 	
-	String word = null; // °Ë»ö ´Ü¾î ÀúÀå
-	int count = 0; // °Ë»ö µÈ È½¼ö
+	String word = null; // ê²€ìƒ‰ ë‹¨ì–´ ì €ì¥
+	int count = 0; // ê²€ìƒ‰ ëœ íšŸìˆ˜
 
 	public WordCountClass() {
 	}

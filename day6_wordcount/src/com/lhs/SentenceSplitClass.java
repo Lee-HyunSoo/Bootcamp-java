@@ -1,4 +1,4 @@
-package day6_wordcount;
+package com.lhs;
 
 public class SentenceSplitClass {
 
