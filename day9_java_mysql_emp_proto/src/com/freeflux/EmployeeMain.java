@@ -27,8 +27,7 @@ public class EmployeeMain {
 		PrintResult.printMenu();
 		Scanner scan = new Scanner(System.in);
 		
-		boolean flag = true;
-		while(flag) {
+		while(true) {
 			int n = scan.nextInt();
 			switch (n) {
 			case 1:
@@ -49,14 +48,8 @@ public class EmployeeMain {
 				mysql.delete();
 				PrintResult.printMenu();
 				break;
-			case 5:
-				flag = false;
-				System.out.println("작업 종료");
-				break;
 			default:
-				flag = false;
-				System.out.println("작업 종료");
-				break;
+				System.exit(0);
 			}
 		}
 		
