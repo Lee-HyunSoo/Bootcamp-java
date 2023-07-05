@@ -1,0 +1,72 @@
+테이블명 : employee (생성자 포함)
+필드명
+empNo  : 사원 고유번호
+empName  : 사원이름
+job  : 직급
+mgr  : 직급번호
+hireDate  : 입사일
+sale  : 급여
+commission : 성과급
+deptNo  : 부서번호
+
+desc employee;
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| seq_no     | int         | NO   | PRI | NULL    | auto_increment |
+| empNo      | int         | NO   | PRI | NULL    |                |
+| empName    | varchar(20) | NO   |     | NULL    |                |
+| job        | varchar(20) | YES  |     | NULL    |                |
+| mgr        | char(2)     | YES  |     | NULL    |                |
+| hireDate   | char(10)    | NO   |     | NULL    |                |
+| sale       | int         | NO   |     | NULL    |                |
+| commission | int         | YES  |     | NULL    |                |
+| deptNo     | int         | YES  |     | NULL    |                |
++------------+-------------+------+-----+---------+----------------+
+
+    /**
+		create table employee (
+			seq_no int(4) auto_increment, // 자동증가
+			empNo int(2) not null, // 0
+			empName varchar(20) not null, // 0 
+			job varchar(20), // 0 : 신규경력, x : 신입
+			mgr char(2), // 0 : 신규경력, x : 신입
+			hireDate char(10) not null, // 0
+			sale int(4) not null, // 0
+			commission int(4),   // 초기값 없슴, x
+			deptNo int(2), // 0: 신규경력, x : 신입
+			primary key(seq_no, empNo) // 중복값을 허용하지 않는 필드
+		);
+		**/
+		
+	/*
+		final String querySelectAll ="select * from employee";
+		final String querySelectOne ="select * from employee where empNo=?";
+		final String queryInsert ="insert into employee (empNo, empName, job, mgr, hireDate, sale, commission, deptNo) values (?,?,?,?,?,?,0,?)";
+		final String queryUpdate ="update employee set sale=? where seq_no=?";
+		final String queryDelete ="delete from employee where job=?";
+	 */
+	 
+	 	System.out.println();
+		System.out.println("원하는 작업 번호를 입력해 주세요..");
+		System.out.println("1. 전체사원조회 / 2. 사원추가 / 3. 전사원 급여10%올림 / 4. 과장 직책 사원 삭제 / 5. 작업 종료:  ");
+		
+		
+		insert into employee
+		(empNo, empName, job, mgr, hireDate, sale, commission, deptNo)
+		values
+		(1004, '이병헌', '부장', '08', '2003-09-02', 600, 0, 20);
+		
+		1. 작업 내용 확인
+		2. 작업에 해당하는 쿼리 작성 및 MySQL에서 확인
+		3. Java 코드에서 사용할 수 있는 쿼리로 변환 : ?
+		4. MySQL 접속 메서드 완성 및 실행, 테스트
+		5. 각 작업에 대한 메서드만 선언
+		
+Exception in thread "main" java.lang.NullPointerException: Cannot invoke "java.sql.ResultSet.close()" because "rs" is null		
+원인 1. Connection 객체가 없다
+원인 2. 따라서 Statement 객체 = null;
+원인 3. 따라서 ResultSet 객체 = null;
+원인 4. 따라서 rs.next() 가 수행될 수 없다.
+
+해결 : Connection 객체가 null 인지를 확인 
