@@ -8,9 +8,9 @@ public interface Querys {
 	String pw_mysql = "0000"; // 본인 비밀번호
 	
 	String querySelectAll = "select * from bootcamp2";	
-	String queryUpdate = "update bootcamp2 set cGenger = ? where cGenger = '기타' and cName = ?";
+	String queryUpdate = "update bootcamp2 set cGender = ? where cGender = '기타' and cName = ?";
 	String queryInsert = "insert into bootcamp2 "
-			+ "(cName, cRating, cJoinDate, cLastDate, cVisitNo, cPostNo, cCommentNo, cGenger, cAge) "
+			+ "(cName, cRating, cJoinDate, cLastDate, cVisitNo, cPostNo, cCommentNo, cGender, cAge) "
 			+ "values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	String querySelectOverVisitNoAvg = "select * from bootcamp2 where cVisitNo > ?";
 	String querySelectClosedAge = "select * from bootcamp2 where cAge = '비공개'";

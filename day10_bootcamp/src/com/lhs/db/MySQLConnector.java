@@ -41,7 +41,7 @@ public class MySQLConnector implements Querys{
 			while (rs.next()) {
 				bootcamps.add(new Bootcamp(rs.getString("cName"), rs.getString("cRating"),
 						rs.getString("cJoinDate"), rs.getString("cLastDate"), rs.getInt("cVisitNo"),
-						rs.getInt("cPostNo"), rs.getInt("cCommentNo"), rs.getString("cGenger"),
+						rs.getInt("cPostNo"), rs.getInt("cCommentNo"), rs.getString("cGender"),
 						rs.getString("cAge")));
 			}
 		} catch (SQLException e) {
@@ -56,7 +56,7 @@ public class MySQLConnector implements Querys{
 		ArrayList<String> names = new ArrayList<String>();
 		ArrayList<Bootcamp> bootcamps = selectAll();
 		for (Bootcamp b : bootcamps)
-			if (b.getcGenger().equals("기타"))
+			if (b.getcGender().equals("기타"))
 				names.add(b.getcName());
 		return names;
 	}
@@ -111,7 +111,7 @@ public class MySQLConnector implements Querys{
 			pstmt.setInt(5, bootcamp.getcVistiNo());
 			pstmt.setInt(6, bootcamp.getcPostNo());
 			pstmt.setInt(7, bootcamp.getcCommentNo());
-			pstmt.setString(8, bootcamp.getcGenger());
+			pstmt.setString(8, bootcamp.getcGender());
 			pstmt.setString(9, bootcamp.getcAge());
 			int n = pstmt.executeUpdate();
 			if (n > 0)

@@ -8,14 +8,14 @@ public class Bootcamp {
 	private int cVisitNo = 0 ; // 방문 수
 	private int cPostNo = 0; // 게시글 수
 	private int cCommentNo = 0; // 댓글 수
-	private String cGenger = ""; // 성별
+	private String cGender = ""; // 성별
 	private String cAge = ""; // 연령대
 	
 	public Bootcamp() {
 	}
 
 	public Bootcamp(String cName, String cRating, String cJoinDate, String cLastDate, int cVisitNo, int cPostNo,
-			int cCommentNo, String cGenger, String cAge) {
+			int cCommentNo, String cGender, String cAge) {
 		super();
 		this.cName = cName;
 		this.cRating = cRating;
@@ -24,7 +24,7 @@ public class Bootcamp {
 		this.cVisitNo = cVisitNo;
 		this.cPostNo = cPostNo;
 		this.cCommentNo = cCommentNo;
-		this.cGenger = cGenger;
+		this.cGender = cGender;
 		this.cAge = cAge;
 	}
 
@@ -56,8 +56,8 @@ public class Bootcamp {
 		return cCommentNo;
 	}
 
-	public String getcGenger() {
-		return cGenger;
+	public String getcGender() {
+		return cGender;
 	}
 
 	public String getcAge() {
@@ -68,7 +68,7 @@ public class Bootcamp {
 	public String toString() {
 		return "Bootcamp [cName=" + cName + ", cRating=" + cRating + ", cJoinDate=" + cJoinDate + ", cLastDate="
 				+ cLastDate + ", cVisitNo=" + cVisitNo + ", cPostNo=" + cPostNo + ", cCommentNo=" + cCommentNo
-				+ ", cGenger=" + cGenger + ", cAge=" + cAge + "]";
+				+ ", cGender=" + cGender + ", cAge=" + cAge + "]";
 	}
 	
 }
